@@ -3,7 +3,7 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté et a le rôle admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header('Location: /myproject/php/login.php');
+    header('Location: ' . url("php/login.php"));
     exit();
 }
 

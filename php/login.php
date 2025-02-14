@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     $user=$stmt->fetch();
-    $role=$user['role']; 
 
     if ($user) {
+        $role=$user['role']; 
         echo "Utilisateur trouvé : $username, Rôle : ".$role."<br>";
         //echo "Mot de passe haché depuis la base : $hashedPassword<br>";
         //if ($password === $hashedPassword) { // 0 - pas ouf comme sécurisation, il faut hacher  
@@ -33,13 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Rediriger selon le rôle
             switch ($role) {
                 case 'apprenant':
-                    header('Location: /myproject/php/dashboard_apprenant.php');
+                    header('Location: ' . url("php/dashboard_apprenant.php"));
                     break;
                 case 'admin':
-                    header('Location: ' . url("login.php"));
+                    header('Location: ' . url("php/dashboard_admin.php"));
                     break;
                 case 'formateur':
-                    header('Location: /myproject/php/dashboard_formateur.php');
+                    header('Location: ' . url("php/dashboard_formateur.php"));
                     break;
                 default:
                     echo "Rôle non reconnu.";

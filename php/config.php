@@ -9,6 +9,6 @@ define('DB_HOST', 'localhost');  // Adresse du serveur (localhost pour un serveu
 define('DB_USER', 'root');       // Nom d'utilisateur MySQL
 define('DB_PASS', '');       // Mot de passe MySQL (mettre '' si vide)
 define('DB_NAME', 'emargement'); // Nom de la base de données
-define("BASE_URL","http://localhost:8000/myproject");
+define("BASE_URL","http://localhost:8000");
 
 ?>
