@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion émargement</title>
+    <!-- Chemin relatif vers le fichier CSS -->
+    <link rel="stylesheet" href="style/style_index.css">
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="login-card">
+            <h2 class="login-title">CONNEXION</h2>
+            <form action="php/login.php" method="POST" class="login-form">
+
+                <!-- IDENTIFIANT-->
+                <label for="username" class="login-label">IDENTIFIANT</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required class="login-input">
+                    <div class="input-underline"></div>
+                </div>
+
+                <!-- MOT DE PASSE-->
+                <label for="password" class="login-label">MOT DE PASSE</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required class="login-input">
+                    <div class="input-underline"></div>
+                </div>
+
+                <!-- REMEMBER ME -->
+                <div class="login-options">
+                    <input type="checkbox" id="remember" name="remember" class="login-checkbox">
+                    <label for="remember" class="login-checkbox-label">Se souvenir de moi</label>
+                </div>
+
+                <button type="submit" class="login-button">Connexion</button>
+                <a href="forgot_password.html" class="forgot-password">Mot de passe oublié?</a>
+            </form>
+
+            <img src="image/gefor.jpg" alt="Groupe Gefor" class="login-logo">
+        </div>
+    </div>
+
+</body>
+</html>

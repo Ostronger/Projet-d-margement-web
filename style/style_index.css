@@ -1,0 +1,170 @@
+/*sources: https://fr.freepik.com/ > fond moderne*/
+
+/* Définition des couleurs principales */
+:root {
+    --primary: #E85421;       /* Orange vif */
+    --secondary: #0E1E5B;     /* Bleu foncé */
+    --background: #FFFFFF;    /* Blanc */
+    --text-primary: #FFFFFF;  /* Texte blanc */
+    --text-secondary: #6C757D;
+    --info: #3498DB;
+    --text-base: 16px;
+}
+
+/* Reset et styles de base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+
+/* Mise en page principale */
+.background-image {
+    background: url('../image/fond_index.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Carte de connexion avec un trait vertical */
+.login-card {
+    background-color: var(--secondary);
+    width: 400px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;  /* Pour positionner le trait vertical */
+}
+
+/* Trait vertical orange */
+.login-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8px;
+    width: 2px; /* largeur du trait */
+    height: 100%;
+    background-color: var(--primary);  /* Couleur orange */
+    border-radius: 12px 0 0 12px;      /* Arrondi en haut et en bas */
+}
+
+
+/* Titre de la carte */
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+/* Formulaire */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Champs de saisie */
+.login-label {
+    font-size: 14px;
+    text-align: left;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.login-input {
+    padding: 12px 12px 8px;
+    border: none;
+    border-radius: 0;
+    font-size: var(--text-base);
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(--text-primary);
+    outline: none;
+    position: relative;
+}
+
+/* Trait orange sous le champ */
+.login-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+/* Options de connexion */
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.login-checkbox {
+    transform: scale(1.2);
+}
+
+/* Bouton de connexion */
+.login-button {
+    background-color: var(--primary);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+}
+
+/* Lien de mot de passe oublié */
+.forgot-password {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Logo en bas */
+.login-logo {
+    width: 200px; /* Augmente la largeur de l’image */
+    height: auto; /* Garde les proportions */
+    margin-top: 16px;
+    display: block;
+}

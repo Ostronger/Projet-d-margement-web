@@ -1,0 +1,529 @@
+/* Charte graphique pour le projet */
+
+/* Couleurs principales */
+:root {
+    --primary: #E85421;
+    --secondary: #0E1E5B;
+    --background: #FFFFFF;
+    --surface: #F1F3F5;
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+    --success: #2ECC71;
+    --warning: #FFC107;
+    --error: #E74C3C;
+    --info: #3498DB;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --transition-base: all 0.3s ease;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+}
+
+/* Typographie */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    max-width: 100%;
+}
+
+.username {
+    margin-left: 10px;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 210px;
+    height: 100vh;
+    background-color: var(--secondary);
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h1 {
+    color: var(--primary);
+    text-align: center;
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-lg);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.sidebar ul li {
+    margin: var(--space-sm) 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: var(--space-sm);
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition-base);
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--primary);
+}
+
+.logout-link {
+    display: block;
+    text-align: center;
+    background-color: var(--error); /* Rouge */
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 20px auto;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.logout-link:hover {
+    background-color: darkred;
+}
+
+.logout-button {
+    display: block;
+    text-align: center;
+    background-color: var(--error); /* Rouge */
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 20px auto;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}
+
+
+/* Profil utilisateur dans la sidebar */
+.user-profile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--primary);
+    overflow: hidden;
+}
+.user-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-initials {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: var(--text-primary);
+}
+
+/* Paramètres placé au-dessus de l'image */
+.setup {
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+/* Style de la classe .image */
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image img {
+    width: 180px;  /* Ajuste la largeur de l’image */
+    height: auto;  /* Maintient les proportions */
+    max-width: auto;  /* Empêche l’image de dépasser son conteneur */
+}
+
+.profile {
+    width: 336px;
+    height: 456px;
+    border-radius: 12px;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile img {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Contenu principal */
+.main-content {
+    flex-grow: 0;
+    margin-left: 260px;
+    padding: var(--space-lg);
+    background-color: none;
+    color: black;
+    font-weight: bold;
+    max-width: 100%;
+}
+
+.main-content h2 {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-md);
+}
+
+/* Carte du tableau de bord */
+.dashboard-card {
+    background-color: var(--surface);
+    padding: var(--space-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+.dashboard-card img {
+    width: 150px;
+    height: auto;
+}
+
+.dashboard-info {
+    flex: 1;
+    margin-right: var(--space-lg);
+}
+
+.dashboard-info h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.dashboard-info p {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-lg);
+}
+
+.date-and-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.date {
+    font-size: var(--text-lg);
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+/* Statistiques */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--secondary);
+    color: white;
+    padding: var(--space-md);
+    border-radius: 12px;
+    margin-bottom: var(--space-lg);
+    margin-left: auto;
+}s
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    font-size: var(--text-lg);
+    position: relative;
+}
+
+.stat-item h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    background-color: grey;
+    color: white;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    margin: auto;
+    transition: var(--transition-base);
+}
+
+.stat-item h2:hover {
+    background-color: #E85421;
+    transform: scale(1.1);
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.option {
+    flex: 1;
+    background-color: var(--secondary);
+    color: white;
+    text-align: center;
+    margin: 50px;
+    padding: 75px;
+    border-radius: 12px;
+    font-size: var(--text-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.option .option-icon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    width: 70px;
+    height: 70px;
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--text-lg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-base);
+}
+
+
+/* Boutons */
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Formulaires */
+input {
+    border-radius: 8px;
+    border: 1px solid var(--surface);
+    padding: var(--space-md);
+    font-size: var(--text-base);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-form {
+    gap: 24px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: linear-gradient(135deg, #0E1E5B, #E85421);
+    padding: 32px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    margin: auto;
+    transform: perspective(1000px) rotateX(10deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.settings-form:hover {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+.settings-form input, .settings-form select {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+}
+
+.settings-form input:focus, .settings-form select:focus {
+    border: 2px solid #FFC107;
+    box-shadow: 0 0 10px #FFC107;
+}
+
+.preview-img {
+    max-width: 100px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.save-button {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.save-button:hover {
+    background: var(--success);
+}
+
+.delete-button {
+    background: var(--error);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-top: 12px;
+}
+
+/* Bouton retour vers l'accueil
+.home-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--text-lg);
+    transition: var(--transition-base);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.home-button:hover {
+    background-color: var(--primary);
+    transform: scale(1.05);
+} */
+
+/* Icône maison */
+.home-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.signature-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signature-pad {
+    border: 2px solid #E85421;
+    border-radius: 8px;
+    background-color: #fff;
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    touch-action: none; /* Désactiver le scroll pendant la signature */
+}
+
+.clear-signature {
+    margin-top: 10px;
+    background-color: #E85421;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.clear-signature:hover {
+    background-color: #c8431b;
+}
+
+.preview-img {
+    display: block;
+    margin: auto;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    border: 2px solid #E85421;
+}
+
+.delete-photo-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.delete-photo {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Animations de chargement */
+.skeleton {
+    background: linear-gradient(90deg, var(--surface) 25%, var(--background) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: skeleton 1.5s infinite;
+}
+
+@keyframes skeleton {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+
