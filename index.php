@@ -1,3 +1,7 @@
+<?php
+require_once "php/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion émargement</title>
     <!-- Chemin relatif vers le fichier CSS -->
-    <link rel="stylesheet" href="style/style_index.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/forms.css">
 
 </head>
 
@@ -14,7 +18,18 @@
     <div class="background-image">
         <div class="login-card">
             <h2 class="login-title">CONNEXION</h2>
-            <form action="php/login.php" method="POST" class="login-form">
+
+            <!-- Affichage des messages d'erreur/succès -->
+            <?php
+                if ($error = getSessionMessage('error')) {
+                    echo "<p class='error-message'>$error</p>";
+                }
+                if ($success = getSessionMessage('success')) {
+                    echo "<p class='success-message'>$success</p>";
+                }
+            ?>
+
+            <form action="php/login_process.php" method="POST" class="login-form">
 
                 <!-- IDENTIFIANT-->
                 <label for="username" class="login-label">IDENTIFIANT</label>
@@ -32,13 +47,13 @@
 
                 <!-- REMEMBER ME -->
                 <div class="login-options">
-                    <input type="checkbox" id="remember" name="remember" class="login-checkbox">
+                    <input type="checkbox" id="remember" name="remember" class="checkbox">
                     <label for="remember" class="login-checkbox-label">Se souvenir de moi</label>
                 </div>
 
-                <button type="submit" class="login-button">Connexion</button>
-                <a href="forgot_password.html" class="forgot-password">Mot de passe oublié?</a>
+                <button type="submit" class="button button--primary">Connexion</button>
             </form>
+               <a href="forgot_password.php">Mot de passe oublié?</a>
 
             <img src="image/gefor.jpg" alt="Groupe Gefor" class="login-logo">
         </div>

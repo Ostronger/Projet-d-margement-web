@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "fonction.php";
+require_once "db.php";
 
 // Vérifier si l'utilisateur est connecté et a le rôle admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'formateur') {
