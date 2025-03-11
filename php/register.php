@@ -2,10 +2,8 @@
 session_start();
 
 // Connexion à la base de données
-$conn = new mysqli('localhost', 'root', '', 'emargement');
-if ($conn->connect_error) {
-    die('Erreur de connexion : ' . $conn->connect_error);
-}
+$pdo= connection_bdd();
+
 
 // Traitement du formulaire d'inscription
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
