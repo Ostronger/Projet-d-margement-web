@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification de la validité de l'email
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         setSessionMessage('error', "Veuillez entrer une adresse email valide.");
-        header("Location: ../forgot_password.php");
+        header("Location: ../auth/forgot_password.php");
         exit();
     }
 
@@ -55,7 +55,7 @@ exit();
             }
 
             // Génération du lien de réinitialisation
-            $resetLink = "http://localhost/projet-ppe-final/Projet-d-margement-web/reset_password.php?token=$token";
+            $resetLink = "http://localhost/Projet-d-margement-web/auth/reset_password.php?token=$token";
 
             // Contenu de l'email
             $subject = "Réinitialisation de votre mot de passe";
@@ -94,7 +94,7 @@ exit();
 
 
     // Redirection vers la page de récupération avec un message
-    header("Location: ../forgot_password.php");
+    header("Location: ../auth/forgot_password.php");
     exit();
 }
 ?>

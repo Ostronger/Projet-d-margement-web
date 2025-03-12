@@ -1,5 +1,5 @@
 <?php
-require_once "php/session.php"; // Gestion des sessions
+require_once "../php/session.php"; // Gestion des sessions
 
 
 // Vérifier si un token est présent dans l'URL
@@ -20,7 +20,8 @@ $token = htmlspecialchars($_GET['token']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réinitialisation du mot de passe</title>
-    <link rel="stylesheet" href="style/style_index.css">
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/forms.css">
 </head>
 <body>
     <div class="background-image">
@@ -38,7 +39,7 @@ $token = htmlspecialchars($_GET['token']);
             ?>
 
 
-            <form action="../Projet-d-margement-web/php/reset_password_process.php" method="POST" class="login-form">
+            <form action="../php/reset_password_process.php" method="POST" class="login-form">
             <input type="hidden" name="token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
                 
                 <label for="password" class="login-label">NOUVEAU MOT DE PASSE</label>
@@ -54,7 +55,7 @@ $token = htmlspecialchars($_GET['token']);
                 </div>
 
                 
-                <button type="submit" class="login-button">Réinitialiser le mot de passe</button>
+                <button type="submit" class="button button--primary">Réinitialiser le mot de passe</button>
             </form>
         </div>
     </div>

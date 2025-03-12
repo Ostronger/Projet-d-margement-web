@@ -1,6 +1,6 @@
 
 <?php
-require_once "php/session.php";
+require_once "../php/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +9,8 @@ require_once "php/session.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mot de passe oublié</title>
-    <link rel="stylesheet" href="style/global.css">
-    <link rel="stylesheet" href="style/forms.css">
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/forms.css">
 </head>
 <body>
     <div class="background-image">
@@ -27,7 +27,7 @@ require_once "php/session.php";
             }
             ?>
 
-            <form action="./php/forgot_password_process.php" method="POST" class="login-form">
+            <form action="../php/forgot_password_process.php" method="POST" class="login-form">
                 <label for="email" class="login-label">EMAIL</label>
                 <div class="input-wrapper">
                     <input type="email" id="email" name="email" placeholder="Entrer votre email" required class="login-input">
@@ -36,8 +36,8 @@ require_once "php/session.php";
 
                 <button type="submit" class="button button--primary">Envoyez un email de réinitialisation</button>
             </form>
-            <a href="index.php">Se connecter</a>
-            <img src="image/gefor.jpg" alt="Groupe Gefor" class="login-logo">
+            <a href="../index.php">Se connecter</a>
+            <img src="../assets/images/gefor.jpg" alt="Groupe Gefor" class="login-logo">
         </div>
     </div>
 </body>

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        $conn = connection_bdd();
+        $conn = connection_bdd(); 
 
         // Requête pour récupérer l'utilisateur
         $stmt = $conn->prepare("SELECT id, role, password FROM users WHERE username = ?");

@@ -1,6 +1,6 @@
 /* Mise en page principale */
 .background-image {
-    background: url('../image/fond_index.jpg') no-repeat center center;
+    background: url('..assets/images/fond_index.jpg') no-repeat center center;
     background-size: cover;
     height: 100vh;
     display: flex;

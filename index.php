@@ -53,9 +53,9 @@ require_once "php/session.php";
 
                 <button type="submit" class="button button--primary">Connexion</button>
             </form>
-               <a href="forgot_password.php">Mot de passe oublié?</a>
+               <a href="auth/forgot_password.php">Mot de passe oublié?</a>
 
-            <img src="image/gefor.jpg" alt="Groupe Gefor" class="login-logo">
+            <img src="assets/images/gefor.jpg" alt="Groupe Gefor" class="login-logo">
         </div>
     </div>
 

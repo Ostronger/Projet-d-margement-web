@@ -1,4 +1,6 @@
 <?php
+
+
 // Démarrer la session uniquement si elle n'est pas déjà active
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -48,19 +50,25 @@ function loadUserData() {
         return;
     }
 
-    if (!isset($_SESSION['firstname']) || !isset($_SESSION['lastname'])) {
-        $pdo = connection_bdd();
-        $stmt = $pdo->prepare("SELECT firstname, lastname, profile_picture FROM users WHERE id = :id");
-        $stmt->execute(['id' => $_SESSION['user_id']]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+ // Vérifier si les données ne sont pas déjà en session
+ if (!isset($_SESSION['firstname']) || !isset($_SESSION['lastname']) || !isset($_SESSION['user_photo'])) {
+    $pdo = connection_bdd();
+    $stmt = $pdo->prepare("SELECT firstname, lastname, profile_picture FROM users WHERE id = :id");
+    $stmt->execute(['id' => $_SESSION['user_id']]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user) {
-            $_SESSION['firstname'] = $user['firstname'];
-            $_SESSION['lastname'] = $user['lastname'];
-            $_SESSION['user_photo'] = $user['profile_picture'] ?? '../image/default-avatar.png';
-            $_SESSION['user_initials'] = strtoupper(substr($user['firstname'], 0, 1) . substr($user['lastname'], 0, 1));
-        }
+    if ($user) {
+        $_SESSION['firstname'] = $user['firstname'];
+        $_SESSION['lastname'] = $user['lastname'];
+
+        // Correction ici : Vérification correcte de `profile_picture`
+        $_SESSION['user_photo'] = (!empty($user['profile_picture']) && file_exists($user['profile_picture'])) 
+            ? $user['profile_picture'] 
+            : null;
+
+        $_SESSION['user_initials'] = strtoupper(substr($user['firstname'], 0, 1) . substr($user['lastname'], 0, 1));
     }
+}
 }
 
 /**

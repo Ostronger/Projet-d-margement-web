@@ -51,7 +51,13 @@ body {
     padding: 0;
 }
 
-/* 📎 Liens */
+.container {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Sidebar fixe + Contenu flexible */
+    height: 100vh; /* Pleine hauteur de l'écran */
+}
+
+/*  Liens */
 a {
     text-decoration: none;
     color: var(--primary);
@@ -60,9 +66,14 @@ a:hover {
     text-decoration: underline;
 }
 
-/* 🖋️ Titres */
+/*  Titres */
 h1, h2, h3 {
     font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 .error-message {

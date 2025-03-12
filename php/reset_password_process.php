@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Vérification du mot de passe (longueur minimale 8 caractères)
         if (empty($newPassword) || strlen($newPassword) < 8) {
             setSessionMessage('error', "Le mot de passe doit contenir au moins 8 caractères.");
-            header("Location: ../reset_password.php?token=$token");
+            header("Location: ../auth/reset_password.php?token=$token");
             exit();
         }
 
         // Vérifier si les deux mots de passe sont identiques
         if ($newPassword !== $confirmPassword) {
             setSessionMessage('error', "Les mots de passe ne correspondent pas.");
-            header("Location: ../reset_password.php?token=$token");
+            header("Location: ../auth/reset_password.php?token=$token");
             exit();
         }
         
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$resetData) {
             
             setSessionMessage('error', "Lien de réinitialisation invalide ou expiré.");
-            header("Location: ../forgot_password.php");
+            header("Location: ../auth/forgot_password.php");
             exit();
         }
 
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$success) {
             setSessionMessage('error', "Une erreur est survenue lors de la mise à jour du mot de passe.");
-            header("Location: ../reset_password.php?token=$token");
+            header("Location: ../auth/reset_password.php?token=$token");
             exit();
         }
 
@@ -64,12 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (PDOException $e) {
         error_log("Erreur SQL : " . $e->getMessage(), 3, "../logs/sql_errors.log");
         setSessionMessage('error', " Une erreur est survenue, veuillez réessayer plus tard.");
-        header("Location: ../reset_password.php?token=$token");
+        header("Location: ../auth/reset_password.php?token=$token");
         exit();
     } catch (Exception $e) {
         error_log("Erreur générale : " . $e->getMessage(), 3, "../logs/general_errors.log");
         setSessionMessage('error', "Une erreur est survenue, veuillez réessayer.");
-        header("Location: ../reset_password.php?token=$token");
+        header("Location: ../auth/reset_password.php?token=$token");
         exit();
     }
 }

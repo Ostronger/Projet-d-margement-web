@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../vendor/autoload.php'; // Assurez-vous que le chemin est correct
+require '../vendor/autoload.php'; // Assurez-vous que le chemin est correct
 require_once "config.php"; // Pour récupérer les paramètres SMTP
 
 /**

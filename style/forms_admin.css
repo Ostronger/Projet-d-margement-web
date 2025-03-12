@@ -1,0 +1,91 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    overflow-y: auto; /* Permet de scroller si besoin */
+    gap: var(--space-xl);
+}
+
+.main-content h1 {
+    font-size: var(--text-2xl);
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.form-admin {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl); /* 16px */
+    background-color: var(--secondary);
+    padding: var(--space-xl);
+}
+
+.toggle-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si besoin */
+    gap: var(--space-md); /* 16px */
+   
+}
+
+.toggle-container input[type="radio"] {
+    width: auto;  /* Évite que les radios s'étendent */
+    height: auto; /* Garde la taille par défaut */
+    margin: 0 5px; /* Petit espacement autour des radios */
+}
+
+.toggle-section1,
+.toggle-section2 {
+    width: 100%; /* Les sections prennent toute la largeur et passent en dessous */
+    margin-top: 10px; /* Espacement pour ne pas coller aux radios */
+}
+
+
+.toggle-section1, .toggle-section2 {
+    display: none;
+}
+
+#choix_groupe:checked ~ .toggle-section1 {
+    display: block;
+}
+
+#choix_individuel:checked ~ .toggle-section2 {
+    display: block;
+}
+
+form {
+    text-align: center;
+    gap: var(--space-md); /* 16px */
+}
+
+label {
+    font-size: 14px;
+    text-align: left;
+    color: var(--background);
+    font-weight: bold;
+    
+}
+
+input {
+    padding: 12px 12px 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--background);
+    outline: none;
+    position: relative;
+}
+
+select {
+    padding: 12px 12px 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--background);
+    outline: none;
+    position: relative;
+}
+
